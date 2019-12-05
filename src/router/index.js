@@ -15,7 +15,6 @@ import nestedRouter from './modules/nested'
 // 工程开始：
 import DailyTeachingRouter from './modules/DailyTeaching'
 
-
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -109,7 +108,7 @@ export const constantRoutes = [
         component: () => import('@/views/guide/index'),
         name: 'Guide',
         meta: { title: 'Guide', icon: 'guide', noCache: true },
-        hidden: true    //隐藏
+        hidden: true // 隐藏
       }
     ]
   },
@@ -126,39 +125,7 @@ export const constantRoutes = [
         meta: { title: 'Profile', icon: 'user', noCache: true }
       }
     ]
-  },
-
-  // DailyTeachingRouter,
-  {
-    path: 'DailyTeaching',
-    component: Layout,
-    redirect: 'noRedirect',
-    name: 'DailyTeaching',
-    meta: {
-      title: '日常授课模块',
-      icon: 'chart'
-    },
-    children: [
-      {
-        path: 'checkCourseTime',
-        component: () => import('@/views/DailyTeaching/engineer/checkCourseTime'),
-        name: 'checkCourseTime',
-        meta: { title: '课时核对', noCache: true }
-      },
-      {
-        path: 'courseApplicateTable',
-        component: () => import('@/views/DailyTeaching/engineer/courseApplicateTable'),
-        name: 'courseApplicateTable',
-        meta: { title: '课程申请表', noCache: true }
-      },
-      {
-        path: 'missCourseapplicate',
-        component: () => import('@/views/DailyTeaching/engineer/missCourseapplicate'),
-        name: 'missCourseapplicate',
-        meta: { title: '缺课原因填写', noCache: true }
-      }
-    ]
-  },
+  }
 
 ]
 
@@ -227,6 +194,7 @@ export const asyncRoutes = [
   chartsRouter,
   nestedRouter,
   tableRouter,
+  DailyTeachingRouter,
 
   {
     path: '/example',
@@ -316,7 +284,7 @@ export const asyncRoutes = [
     component: Layout,
     redirect: '/excel/export-excel',
     name: 'Excel',
-    hidden: true,    //隐藏
+    hidden: true, // 隐藏
     meta: {
       title: 'Excel',
       icon: 'excel'
@@ -355,7 +323,7 @@ export const asyncRoutes = [
     redirect: '/zip/download',
     alwaysShow: true,
     name: 'Zip',
-    hidden: true,    //隐藏
+    hidden: true, // 隐藏
     meta: { title: 'Zip', icon: 'zip' },
     children: [
       {
@@ -371,7 +339,7 @@ export const asyncRoutes = [
     path: '/pdf',
     component: Layout,
     redirect: '/pdf/index',
-    hidden: true,    //隐藏
+    hidden: true, // 隐藏
     children: [
       {
         path: 'index',
@@ -403,7 +371,7 @@ export const asyncRoutes = [
   {
     path: '/clipboard',
     component: Layout,
-    hidden: true,    //隐藏
+    hidden: true, // 隐藏
     children: [
       {
         path: 'index',
@@ -417,7 +385,7 @@ export const asyncRoutes = [
   {
     path: 'external-link',
     component: Layout,
-    hidden: true,    //隐藏
+    hidden: true, // 隐藏
     children: [
       {
         path: 'https://github.com/PanJiaChen/vue-element-admin',
